@@ -18,7 +18,12 @@ import {
   GraduationCap,
   Layers,
   Terminal,
-  FolderGit2
+  FolderGit2,
+  Smartphone,
+  Flame,
+  Layout,
+  FileCode2,
+  GitBranch
 } from 'lucide-react';
 
 // Brand icon components styled to match Lucide's 2px line aesthetics
@@ -51,11 +56,11 @@ const portfolioConfig = {
   title: "Computing Undergraduate & Web Developer",
   roleSubtitles: [
     "Computing Undergraduate",
-    "Frontend Developer",
+    "Software Engineer",
     "UI/UX Enthusiast",
     "Problem Solver"
   ],
-  about: "I'm Gayathri Isurika, an undergraduate in Computing and Information Systems at the Faculty of Computing, Sabaragamuwa University of Sri Lanka. Deeply passionate about web development and UI/UX design, I craft clean, responsive, and intuitive digital interfaces while solving real-world problems through reliable code.",
+  about: "I'm Gayathri Isurika, a third year Computing and Information Systems undergraduate at Sabaragamuwa University of Sri Lanka. I am passionate about Software Quality Assurance, software development, and UI/UX design. I have practical experience with Selenium, Cypress, Postman, JUnit, MySQL, Java, JavaScript, Flutter, and React through academic projects and hands on learning. I enjoy identifying software issues, solving problems, and creating reliable, user-friendly applications. My goal is to grow as a QA Engineer and contribute to building high-quality software solutions.",
   profileImage: profileImage,
   contact: {
     email: "isurikagayathri472@gmail.com",
@@ -64,12 +69,29 @@ const portfolioConfig = {
     instagram: "https://www.instagram.com/__gayathri4__/"
   },
   skills: [
-    { name: "React", level: 75, category: "Frontend", icon: Code2, color: "#38bdf8" },
-    { name: "JavaScript", level: 85, category: "Languages", icon: Terminal, color: "#facc15" },
-    { name: "HTML & CSS", level: 95, category: "Frontend", icon: Globe, color: "#f97316" },
-    { name: "Java", level: 75, category: "Backend", icon: Cpu, color: "#ef4444" },
-    { name: "Figma", level: 90, category: "Design", icon: Palette, color: "#ec4899" },
-    { name: "MySQL", level: 85, category: "Database", icon: Database, color: "#06b6d4" },
+    // Programming Languages
+    { name: "HTML", level: 95, category: "Programming Languages", icon: FileCode2, color: "#f97316" },
+    { name: "CSS", level: 90, category: "Programming Languages", icon: Globe, color: "#38bdf8" },
+    { name: "Java", level: 80, category: "Programming Languages", icon: Cpu, color: "#ef4444" },
+    { name: "JavaScript", level: 85, category: "Programming Languages", icon: Terminal, color: "#facc15" },
+    { name: "Dart", level: 75, category: "Programming Languages", icon: Code2, color: "#0ea5e9" },
+
+    // Databases
+    { name: "MySQL", level: 85, category: "Databases", icon: Database, color: "#06b6d4" },
+    { name: "Firebase Firestore", level: 80, category: "Databases", icon: Database, color: "#f59e0b" },
+
+    // Tools & Frameworks
+    { name: "Flutter", level: 80, category: "Tools & Frameworks", icon: Smartphone, color: "#0284c7" },
+    { name: "Firebase", level: 80, category: "Tools & Frameworks", icon: Flame, color: "#f59e0b" },
+    { name: "Git / GitHub", level: 85, category: "Tools & Frameworks", icon: GitBranch, color: "#e2e8f0" },
+    { name: "Figma", level: 90, category: "Tools & Frameworks", icon: Palette, color: "#ec4899" },
+    { name: "Android Studio", level: 75, category: "Tools & Frameworks", icon: Smartphone, color: "#22c55e" },
+    { name: "Visual Studio Code", level: 90, category: "Tools & Frameworks", icon: Terminal, color: "#3b82f6" },
+    { name: "Canva", level: 85, category: "Tools & Frameworks", icon: Palette, color: "#06b6d4" },
+    { name: "draw.io", level: 80, category: "Tools & Frameworks", icon: Layout, color: "#f97316" },
+
+    // Design
+    { name: "UI/UX Design", level: 85, category: "Design", icon: Sparkles, color: "#a855f7" }
   ],
   projects: [
     {
@@ -146,8 +168,8 @@ const Navigation = ({ activeSection, setActiveSection }) => {
   return (
     <header className="nav-container">
       <nav className="navigation" aria-label="Main Navigation">
-        <button 
-          className="nav-brand" 
+        <button
+          className="nav-brand"
           onClick={() => setActiveSection('Home')}
           aria-label="Go to home"
         >
@@ -168,7 +190,7 @@ const Navigation = ({ activeSection, setActiveSection }) => {
           ))}
         </div>
 
-        <button 
+        <button
           className="nav-cta-btn"
           onClick={() => setActiveSection('Contact')}
         >
@@ -202,20 +224,20 @@ const HomeSection = ({ setActiveSection }) => {
           </div>
 
           <p className="bio-description">
-            Undergraduate in Computing & Information Systems at Sabaragamuwa University of Sri Lanka. 
+            Undergraduate in Computing & Information Systems at Sabaragamuwa University of Sri Lanka.
             Crafting elegant, accessible, and high-performance digital web experiences.
           </p>
 
           <div className="hero-actions">
-            <button 
-              className="btn-primary" 
+            <button
+              className="btn-primary"
               onClick={() => setActiveSection('Works')}
             >
               <FolderGit2 size={18} />
               <span>View Projects</span>
             </button>
-            <button 
-              className="btn-secondary" 
+            <button
+              className="btn-secondary"
               onClick={() => setActiveSection('Contact')}
             >
               <Mail size={18} />
@@ -224,34 +246,34 @@ const HomeSection = ({ setActiveSection }) => {
           </div>
 
           <div className="social-links">
-            <a 
-              href={portfolioConfig.contact.github} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href={portfolioConfig.contact.github}
+              target="_blank"
+              rel="noopener noreferrer"
               className="social-link"
               aria-label="GitHub Profile"
             >
               <GithubIcon size={20} />
             </a>
-            <a 
-              href={portfolioConfig.contact.linkedin} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href={portfolioConfig.contact.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
               className="social-link"
               aria-label="LinkedIn Profile"
             >
               <LinkedinIcon size={20} />
             </a>
-            <a 
-              href={portfolioConfig.contact.instagram} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href={portfolioConfig.contact.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
               className="social-link"
               aria-label="Instagram Profile"
             >
               <InstagramIcon size={20} />
             </a>
-            <a 
+            <a
               href={`mailto:${portfolioConfig.contact.email}`}
               className="social-link"
               aria-label="Send an Email"
@@ -265,7 +287,7 @@ const HomeSection = ({ setActiveSection }) => {
           <div className="profile-halo-wrapper">
             <div className="halo-glow"></div>
             <div className="halo-ring"></div>
-            
+
             <div className="profile-card">
               <img
                 src={portfolioConfig.profileImage}
@@ -322,7 +344,7 @@ const AboutSection = ({ setActiveSection }) => {
             <span className="pill-tag">🧩 Problem Solving</span>
           </div>
 
-          <button 
+          <button
             className="btn-primary"
             onClick={() => setActiveSection('Contact')}
           >
@@ -354,6 +376,13 @@ const AboutSection = ({ setActiveSection }) => {
 
 // --- Skills Section ---
 const SkillsSection = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const categories = ['All', 'Programming Languages', 'Databases', 'Tools & Frameworks', 'Design'];
+
+  const filteredSkills = selectedCategory === 'All'
+    ? portfolioConfig.skills
+    : portfolioConfig.skills.filter(skill => skill.category === selectedCategory);
+
   return (
     <section className="content-section" id="Skills">
       <div className="section-header">
@@ -366,8 +395,20 @@ const SkillsSection = () => {
         </p>
       </div>
 
+      <div className="skills-filter">
+        {categories.map(category => (
+          <button
+            key={category}
+            className={`skills-filter-btn ${selectedCategory === category ? 'active' : ''}`}
+            onClick={() => setSelectedCategory(category)}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+
       <div className="skills-grid">
-        {portfolioConfig.skills.map(skill => {
+        {filteredSkills.map(skill => {
           const Icon = skill.icon;
           return (
             <div className="skill-card" key={skill.name}>
@@ -385,8 +426,8 @@ const SkillsSection = () => {
               </div>
 
               <div className="progress-track">
-                <div 
-                  className="progress-fill" 
+                <div
+                  className="progress-fill"
                   style={{ width: `${skill.level}%` }}
                 ></div>
               </div>
@@ -420,9 +461,9 @@ const WorksSection = () => {
                 <div className="project-icon-box">
                   <FolderGit2 size={24} />
                 </div>
-                <a 
-                  href={project.link} 
-                  target="_blank" 
+                <a
+                  href={project.link}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="project-external-btn"
                   aria-label={`View ${project.title} on GitHub`}
@@ -442,10 +483,10 @@ const WorksSection = () => {
                 ))}
               </div>
 
-              <a 
-                href={project.link} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="project-footer-action"
               >
                 <GithubIcon size={16} />
@@ -498,7 +539,7 @@ const ContactSection = () => {
                 <Mail size={18} color="#38bdf8" />
                 <span>{portfolioConfig.contact.email}</span>
               </div>
-              <button 
+              <button
                 className={`copy-btn ${copied ? 'copied' : ''}`}
                 onClick={handleCopyEmail}
               >
@@ -509,26 +550,26 @@ const ContactSection = () => {
           </div>
 
           <div className="contact-social-grid">
-            <a 
+            <a
               href={`mailto:${portfolioConfig.contact.email}`}
               className="contact-social-pill"
             >
               <Mail size={18} color="#38bdf8" />
               <span>Send Direct Email</span>
             </a>
-            <a 
-              href={portfolioConfig.contact.linkedin} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href={portfolioConfig.contact.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
               className="contact-social-pill"
             >
               <LinkedinIcon size={18} />
               <span>Connect on LinkedIn</span>
             </a>
-            <a 
-              href={portfolioConfig.contact.github} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href={portfolioConfig.contact.github}
+              target="_blank"
+              rel="noopener noreferrer"
               className="contact-social-pill"
             >
               <GithubIcon size={18} />
@@ -592,34 +633,34 @@ const Footer = ({ setActiveSection }) => {
         </div>
 
         <div className="footer-social-row">
-          <a 
-            href={portfolioConfig.contact.github} 
-            target="_blank" 
+          <a
+            href={portfolioConfig.contact.github}
+            target="_blank"
             rel="noopener noreferrer"
             className="footer-social-btn"
             aria-label="GitHub"
           >
             <GithubIcon size={18} />
           </a>
-          <a 
-            href={portfolioConfig.contact.linkedin} 
-            target="_blank" 
+          <a
+            href={portfolioConfig.contact.linkedin}
+            target="_blank"
             rel="noopener noreferrer"
             className="footer-social-btn"
             aria-label="LinkedIn"
           >
             <LinkedinIcon size={18} />
           </a>
-          <a 
-            href={portfolioConfig.contact.instagram} 
-            target="_blank" 
+          <a
+            href={portfolioConfig.contact.instagram}
+            target="_blank"
             rel="noopener noreferrer"
             className="footer-social-btn"
             aria-label="Instagram"
           >
             <InstagramIcon size={18} />
           </a>
-          <a 
+          <a
             href={`mailto:${portfolioConfig.contact.email}`}
             className="footer-social-btn"
             aria-label="Email"
@@ -667,9 +708,9 @@ function App() {
     <div className="app-wrapper">
       <AnimatedBackground />
       <div className="container">
-        <Navigation 
-          activeSection={activeSection} 
-          setActiveSection={handleSectionChange} 
+        <Navigation
+          activeSection={activeSection}
+          setActiveSection={handleSectionChange}
         />
         <main id="main-content">
           {renderSection()}
